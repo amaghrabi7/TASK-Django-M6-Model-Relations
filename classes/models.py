@@ -30,17 +30,8 @@ class Slide(models.Model):
         return self.name
 
 
-class Assignment(models.Model):
-    lecture = models.OneToOneField(
-        Lecture,
-        on_delete=models.CASCADE,
-        primary_key=True,
-    )
-    name = models.CharField(max_length=30)
-    link = models.URLField()
-
-    def __str__(self):
-        return self.name
+class Assignment(Slide):
+    pass
 
 
 class Tag(models.Model):

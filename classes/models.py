@@ -16,8 +16,7 @@ class Lecture(models.Model):
     def __str__(self):
         return self.name
 
-
-class Slide(models.Model):
+class Materials(models.model):
     lecture = models.OneToOneField(
         Lecture,
         on_delete=models.CASCADE,
@@ -32,8 +31,11 @@ class Slide(models.Model):
     class Meta:
         abstract = True
 
+class Slide(Materials):
+    pass
 
-class Assignment(Slide):
+
+class Assignment(Materials):
     pass
 
 

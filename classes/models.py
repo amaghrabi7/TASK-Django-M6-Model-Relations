@@ -9,7 +9,7 @@ class Lecture(models.Model):
     course = models.ForeignKey(
         Course,
         on_delete=models.CASCADE,
-        related_name="courses"
+        related_name="lectures"
     )
     name = models.CharField(max_length=30)
 
